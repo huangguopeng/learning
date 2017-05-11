@@ -1,0 +1,49 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+</head>
+<body>
+<h2>Hello ${name}!</h2>
+
+<h2>变量输出</h2>
+<p>${var}</p>
+
+<h2>获取url参数</h2>
+<p>
+    #set($n = $request.getParameter('n'))
+    n:$n
+</p>
+
+
+<h2>循环</h2>
+<table>
+
+    #foreach($item in $list)
+
+    <tr>
+        <td>$item.name</td>
+        <td>${item.password}</td>
+        <td>${item.age}</td>
+        <td>${date.format($item.date)}</td>
+    </tr>
+
+    #end
+
+
+</table>
+
+#sayHello("velocity")
+
+
+<h2>include</h2>
+<p>原样输出</p>
+
+#include("include.vm")
+
+<h2>parse</h2>
+<p>编译后再输出</p>
+
+#parse("include.vm")
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>简易聊天室</title>
+  <script type='text/javascript' src='/dwr/interface/MessagePush.js'></script>
+  <script type='text/javascript' src='/dwr/engine.js'></script>
+  <script type='text/javascript' src='/dwr/util.js'></script>
+  <script src="//cdn.bootcss.com/jquery/1.11.1-rc1/jquery.min.js"></script>
+</head>
+<body>
+
+<ul id="message">
+
+</ul>
+
+<div>
+
+  <textarea id="msg"></textarea>
+  <br>
+  <input type="button" id="send" value="发送">
+</div>
+
+<script>
+   $(function(){
+        // console.log(dwr);
+        dwr.engine.setActiveReverseAjax(true);
+        $("#send").click(function(){
+            MessagePush.send($("#msg").val());
+        });
+    });
+
+    //这个函数是提供给后台推送的时候  调用的
+    function show(msg){
+        $("#message").append("<li>"+msg+"</li>");
+    }
+
+
+</script>
+
+</body>
+</html>

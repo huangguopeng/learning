@@ -1,0 +1,15 @@
+<table>
+
+    #foreach($item in $list)
+
+    <tr>
+        <td>$item.name</td>
+        <td>${item.password}</td>
+        <td>${item.age}</td>
+        <td>${date.format($item.date)}</td>
+    </tr>
+
+    #end
+
+
+</table>

@@ -16,6 +16,7 @@
     <module>springmvc-velocity</module>
     <module>mybatis-generator</module>
     <module>groovy</module>
+    <module>socket</module>
   </modules>
   <name>java学习项目</name>
 
